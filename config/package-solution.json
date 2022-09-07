@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "reprotaxonomyfail-client-side-solution",
+    "id": "a1a79ef3-f5b6-4696-b37e-74d52f5123ef",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.15.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "reprotaxonomyfail description"
+      },
+      "longDescription": {
+        "default": "reprotaxonomyfail description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "reprotaxonomyfail Feature",
+        "description": "The feature that activates elements of the reprotaxonomyfail solution.",
+        "id": "c78f6fb2-d52f-4972-adf0-09133acb2c30",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/reprotaxonomyfail.sppkg"
+  }
+}

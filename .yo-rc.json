@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.15.2",
+    "libraryName": "reprotaxonomyfail",
+    "libraryId": "a1a79ef3-f5b6-4696-b37e-74d52f5123ef",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "reprotaxonomyfail",
+    "solutionShortDescription": "reprotaxonomyfail description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
