@@ -9,11 +9,20 @@
           "manifest": "./src/webparts/repro/ReproWebPart.manifest.json"
         }
       ]
+    },
+    "repro-in-form-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/reproInForm/ReproInFormWebPart.js",
+          "manifest": "./src/webparts/reproInForm/ReproInFormWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
     "ReproWebPartStrings": "lib/webparts/repro/loc/{locale}.js",
-    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js",
+    "ReproInFormWebPartStrings": "lib/webparts/reproInForm/loc/{locale}.js"
   }
 }

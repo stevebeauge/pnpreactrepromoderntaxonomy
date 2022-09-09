@@ -12,6 +12,7 @@ specifiers:
   '@microsoft/sp-office-ui-fabric-core': 1.15.2
   '@microsoft/sp-property-pane': 1.15.2
   '@microsoft/sp-webpart-base': 1.15.2
+  '@pnp/sp': ^3.7.0
   '@pnp/spfx-controls-react': 3.10.0
   '@rushstack/eslint-config': 2.5.1
   '@types/react': 16.9.51
@@ -23,6 +24,7 @@ specifiers:
   office-ui-fabric-react: 7.185.7
   react: 16.13.1
   react-dom: 16.13.1
+  react-hook-form: ^7.34.2
   source-map-loader: 1.1.3
   spfx-fast-serve-helpers: ~1.15.3
   tslib: 2.3.1
@@ -35,10 +37,12 @@ dependencies:
   '@microsoft/sp-office-ui-fabric-core': 1.15.2
   '@microsoft/sp-property-pane': 1.15.2_7ombvvupg4tnmt4iqt5m47i6cu
   '@microsoft/sp-webpart-base': 1.15.2_7ombvvupg4tnmt4iqt5m47i6cu
+  '@pnp/sp': 3.7.0
   '@pnp/spfx-controls-react': 3.10.0_7ombvvupg4tnmt4iqt5m47i6cu
   office-ui-fabric-react: 7.185.7_24igt2r6uynb67fv3burekl4py
   react: 16.13.1
   react-dom: 16.13.1_react@16.13.1
+  react-hook-form: 7.34.2_react@16.13.1
   tslib: 2.3.1
 
 devDependencies:
@@ -72,7 +76,7 @@ packages:
     resolution: {integrity: sha512-TrRLIoSQVzfAJX9H1JeFjzAoDGcoK1IYX1UImfceTZpsyYfWr09Ss1aHW1y5TrrR3iq6RZLBwJ3E24uwPhwahw==}
     engines: {node: '>=12.0.0'}
     dependencies:
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: true
 
   /@azure/core-asynciterator-polyfill/1.0.2:
@@ -85,7 +89,7 @@ packages:
     engines: {node: '>=12.0.0'}
     dependencies:
       '@azure/abort-controller': 1.1.0
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: true
 
   /@azure/core-http/1.2.6:
@@ -103,7 +107,7 @@ packages:
       node-fetch: 2.6.7
       process: 0.11.10
       tough-cookie: 4.1.2
-      tslib: 2.3.1
+      tslib: 2.4.0
       tunnel: 0.0.6
       uuid: 8.3.2
       xml2js: 0.4.23
@@ -119,7 +123,7 @@ packages:
       '@azure/core-http': 1.2.6
       '@azure/core-tracing': 1.0.0-preview.11
       events: 3.3.0
-      tslib: 2.3.1
+      tslib: 2.4.0
     transitivePeerDependencies:
       - encoding
     dev: true
@@ -128,7 +132,7 @@ packages:
     resolution: {integrity: sha512-H6Tg9eBm0brHqLy0OSAGzxIh1t4UL8eZVrSUMJ60Ra9cwq2pOskFqVpz2pYoHDsBY1jZ4V/P8LRGb5D5pmC6rg==}
     engines: {node: '>=12.0.0'}
     dependencies:
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: true
 
   /@azure/core-tracing/1.0.0-preview.11:
@@ -137,7 +141,7 @@ packages:
     dependencies:
       '@opencensus/web-types': 0.0.7
       '@opentelemetry/api': 1.0.0-rc.0
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: true
 
   /@azure/core-tracing/1.0.0-preview.7:
@@ -154,7 +158,7 @@ packages:
     dependencies:
       '@opencensus/web-types': 0.0.7
       '@opentelemetry/api': 0.10.2
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: true
 
   /@azure/identity/1.0.3:
@@ -178,7 +182,7 @@ packages:
     resolution: {integrity: sha512-aK4s3Xxjrx3daZr3VylxejK3vG5ExXck5WOHDJ8in/k9AqlfIyFMMT1uG7u8mNjX+QRILTIn0/Xgschfh/dQ9g==}
     engines: {node: '>=12.0.0'}
     dependencies:
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: true
 
   /@azure/msal-browser/2.22.0:
@@ -204,7 +208,7 @@ packages:
       '@azure/logger': 1.0.3
       '@opentelemetry/api': 0.10.2
       events: 3.3.0
-      tslib: 2.3.1
+      tslib: 2.4.0
     transitivePeerDependencies:
       - encoding
     dev: true
@@ -221,7 +225,7 @@ packages:
       '@azure/logger': 1.0.3
       '@opentelemetry/api': 0.10.2
       events: 3.3.0
-      tslib: 2.3.1
+      tslib: 2.4.0
     transitivePeerDependencies:
       - encoding
     dev: true
@@ -623,7 +627,7 @@ packages:
     resolution: {integrity: sha512-puklLc6Jvg279OGagqkSfuHML6ckBhw3gJakdvIZHKeJiduh+34U4Finl3K24yBSXzG2WsN+LwLTd1Vcociy+g==}
     dependencies:
       '@fluentui/set-version': 8.2.2
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: false
 
   /@fluentui/keyboard-key/0.2.17:
@@ -636,7 +640,7 @@ packages:
     resolution: {integrity: sha512-bHWftN3zTp1bbBfmAEH8YK9UURWj2mffw7b7VaW2Og1qxwv3GMSza1cyv/d3EVqpMJ8AVwFv3mbi9p1ieMN9mw==}
     dependencies:
       '@fluentui/set-version': 8.2.2
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: false
 
   /@fluentui/react-bindings/0.51.7_24igt2r6uynb67fv3burekl4py:
@@ -782,7 +786,7 @@ packages:
       '@fluentui/utilities': 8.13.1_kxum32tlaadgrvgjaae2bvkiji
       '@types/react': 16.9.51
       react: 16.13.1
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: false
 
   /@fluentui/react-icons-northstar/0.51.7_24igt2r6uynb67fv3burekl4py:
@@ -941,7 +945,7 @@ packages:
       '@fluentui/set-version': 8.2.2
       '@types/react': 16.9.51
       react: 16.13.1
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: false
 
   /@fluentui/scheme-utilities/8.3.17_kxum32tlaadgrvgjaae2bvkiji:
@@ -949,7 +953,7 @@ packages:
     dependencies:
       '@fluentui/set-version': 8.2.2
       '@fluentui/theme': 2.6.16_kxum32tlaadgrvgjaae2bvkiji
-      tslib: 2.3.1
+      tslib: 2.4.0
     transitivePeerDependencies:
       - '@types/react'
       - react
@@ -958,7 +962,7 @@ packages:
   /@fluentui/set-version/8.2.2:
     resolution: {integrity: sha512-Vg20KZ0ufgWjxx6GFbqC5wiVxXZDUWgNT0r0By/Eyj4bUSb1jG6lmf5z1oY1dUX0YS6Cp5e6GnvbNdXg5E7orA==}
     dependencies:
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: false
 
   /@fluentui/state/0.51.7:
@@ -1004,7 +1008,7 @@ packages:
       '@fluentui/utilities': 8.13.1_kxum32tlaadgrvgjaae2bvkiji
       '@types/react': 16.9.51
       react: 16.13.1
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: false
 
   /@fluentui/utilities/8.13.1_kxum32tlaadgrvgjaae2bvkiji:
@@ -1018,7 +1022,7 @@ packages:
       '@fluentui/set-version': 8.2.2
       '@types/react': 16.9.51
       react: 16.13.1
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: false
 
   /@fluentui/web-components/0.22.1:
@@ -1615,7 +1619,7 @@ packages:
     dependencies:
       '@azure/msal-browser': 2.22.0
       '@babel/runtime': 7.19.0
-      tslib: 2.3.1
+      tslib: 2.4.0
     dev: false
 
   /@microsoft/microsoft-graph-types-beta/0.15.0-preview:
@@ -2390,6 +2394,13 @@ packages:
       tslib: 2.2.0
     dev: false
 
+  /@pnp/core/3.7.0:
+    resolution: {integrity: sha512-ULDdU0dxW4tKjkENjs/Y0Mo5nThgJ3KH17WU7kfS0koTkkXN474d3XpRe5CGEkyqA9wJLo2F/PfB4cMa94RJbg==}
+    engines: {node: '>=14.15.1'}
+    dependencies:
+      tslib: 2.4.0
+    dev: false
+
   /@pnp/logging/2.5.0:
     resolution: {integrity: sha512-SnmMCN6oADjiHKAIR23FfTqXeQZeXPBnWeVfyZAgzJfRn9uEQoUlkyET3jHjl9kkrFOVkiOD1CRI7TWMIxURbA==}
     dependencies:
@@ -2404,6 +2415,14 @@ packages:
       tslib: 2.2.0
     dev: false
 
+  /@pnp/queryable/3.7.0:
+    resolution: {integrity: sha512-sFYSV86VPyb9W+Yjm3F1cpwSMlrFJTDoE4plxZYtmgOqwh4RbftrAQ/qJlWRK7mafPYdu59axY5FL955Hd6HkQ==}
+    engines: {node: '>=14.15.1'}
+    dependencies:
+      '@pnp/core': 3.7.0
+      tslib: 2.4.0
+    dev: false
+
   /@pnp/sp/2.5.0:
     resolution: {integrity: sha512-4s2p+X5qvkXR72NViKb8DIfC+pvj/a3psZ3Im5PRIan2ErMtu9ch3Lb9nkSaMCF3NTJxWOhkUQ/R6tx8ApaUkg==}
     dependencies:
@@ -2411,6 +2430,16 @@ packages:
       '@pnp/logging': 2.5.0
       '@pnp/odata': 2.5.0
       tslib: 2.2.0
+    dev: false
+
+  /@pnp/sp/3.7.0:
+    resolution: {integrity: sha512-96y3LaJ4ZHmnd4xBPnqH7R2QtUoY0nHiVo3m4F2DVUIERPj0aj2NGipSaGj9rgBmBU45SkrfvkttnkTnXWnHLg==}
+    engines: {node: '>=14.15.1'}
+    requiresBuild: true
+    dependencies:
+      '@pnp/core': 3.7.0
+      '@pnp/queryable': 3.7.0
+      tslib: 2.4.0
     dev: false
 
   /@pnp/spfx-controls-react/3.10.0_7ombvvupg4tnmt4iqt5m47i6cu:
@@ -13346,6 +13375,15 @@ packages:
       - fela
     dev: false
 
+  /react-hook-form/7.34.2_react@16.13.1:
+    resolution: {integrity: sha512-1lYWbEqr0GW7HHUjMScXMidGvV0BE2RJV3ap2BL7G0EJirkqpccTaawbsvBO8GZaB3JjCeFBEbnEWI1P8ZoLRQ==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      react: 16.13.1
+    dev: false
+
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -15627,6 +15665,10 @@ packages:
 
   /tslib/2.3.1:
     resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
+    dev: false
+
+  /tslib/2.4.0:
+    resolution: {integrity: sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==}
 
   /tsutils/3.21.0_typescript@4.5.5:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
