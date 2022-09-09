@@ -13,10 +13,21 @@ type ReproProps = {
 
 type PartialTermInfo = IModernTaxonomyPickerProps["initialValues"];
 
-const Repro = ({ context }: ReproProps): React.ReactElement<ReproProps> => {
+const Repro = React.memo(({ context }: ReproProps): React.ReactElement<ReproProps> => {
 
   const [termSetId, setTermSetId] = useState<string | undefined>(undefined);
-
+  const initialTerms: PartialTermInfo = [
+    {
+      id: "5abaeda2-1685-431c-af4e-45e76310754c",
+      labels: [
+        {
+          isDefault: true,
+          languageTag: 'fr-FR',
+          name: "Marketing"
+        }
+      ]
+    }
+  ];
   const [selectedTerms, setSelectedTerms] = useState<PartialTermInfo | undefined>(undefined);
 
   return (
@@ -27,15 +38,17 @@ const Repro = ({ context }: ReproProps): React.ReactElement<ReproProps> => {
       <div>
         {termSetId && (
           <ModernTaxonomyPicker
+            allowMultipleSelections
             termSetId={termSetId}
             panelTitle="My term set"
             label="Modern taxonmy picker"
             context={context}
-            initialValues={selectedTerms}
+            initialValues={initialTerms}
             onChange={setSelectedTerms}
           />
         )}
-      </div> <div>
+      </div>
+      <div>
         {selectedTerms && (
           <ul>
             {selectedTerms.map(t => (
@@ -48,6 +61,6 @@ const Repro = ({ context }: ReproProps): React.ReactElement<ReproProps> => {
       </div>
     </>
   );
-}
+})
 
 export { Repro, ReproProps };

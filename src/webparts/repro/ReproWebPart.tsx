@@ -1,15 +1,16 @@
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
 import { Version } from '@microsoft/sp-core-library';
 import {
-  IPropertyPaneConfiguration,
-  PropertyPaneTextField
+    IPropertyPaneConfiguration,
+    PropertyPaneTextField
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
+import { Label } from 'office-ui-fabric-react';
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 
 import * as strings from 'ReproWebPartStrings';
-import { Repro, ReproProps } from './components/Repro';
+import { Repro } from './components/Repro';
 
 export interface IReproWebPartProps {
   description: string;
@@ -21,12 +22,13 @@ export default class ReproWebPart extends BaseClientSideWebPart<IReproWebPartPro
   private _environmentMessage: string = '';
 
   public render(): void {
-    const element: React.ReactElement<ReproProps> = React.createElement(
-      Repro,
-      {
-        context : this.context
-      }
-    );
+    const element = (
+      <>
+        <Label>Using ModernTaxonomyPicker</Label>
+        <Repro context={this.context} />
+  
+      </>
+    )
 
     ReactDom.render(element, this.domElement);
   }

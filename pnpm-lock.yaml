@@ -5,14 +5,14 @@ specifiers:
   '@microsoft/eslint-plugin-spfx': 1.15.2
   '@microsoft/rush-stack-compiler-4.5': 0.2.2
   '@microsoft/sp-build-web': 1.15.2
-  '@microsoft/sp-component-base': ^1.15.2
+  '@microsoft/sp-component-base': 1.15.2
   '@microsoft/sp-core-library': 1.15.2
   '@microsoft/sp-lodash-subset': 1.15.2
   '@microsoft/sp-module-interfaces': 1.15.2
   '@microsoft/sp-office-ui-fabric-core': 1.15.2
   '@microsoft/sp-property-pane': 1.15.2
   '@microsoft/sp-webpart-base': 1.15.2
-  '@pnp/spfx-controls-react': ^3.10.0
+  '@pnp/spfx-controls-react': 3.10.0
   '@rushstack/eslint-config': 2.5.1
   '@types/react': 16.9.51
   '@types/react-dom': 16.9.8
@@ -23,6 +23,7 @@ specifiers:
   office-ui-fabric-react: 7.185.7
   react: 16.13.1
   react-dom: 16.13.1
+  source-map-loader: 1.1.3
   spfx-fast-serve-helpers: ~1.15.3
   tslib: 2.3.1
   typescript: 4.5.5
@@ -53,6 +54,7 @@ devDependencies:
   ajv: 6.12.6
   eslint-plugin-react-hooks: 4.3.0_eslint@8.0.0-rc.0
   gulp: 4.0.2
+  source-map-loader: 1.1.3_webpack@5.74.0
   spfx-fast-serve-helpers: 1.15.3_nhyaa6dxpf64fw2ikkmnagqurm
   typescript: 4.5.5
 
@@ -3068,7 +3070,7 @@ packages:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
       '@types/eslint': 8.4.6
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
     dev: true
 
   /@types/eslint/7.29.0:
@@ -3081,7 +3083,7 @@ packages:
   /@types/eslint/8.4.6:
     resolution: {integrity: sha512-/fqTbjxyFUaYNO7VcW5g+4npmqVACz1bB7RTHYuLj+PRjw9hrCwrUXVQFpChUS0JsyEFvMZ7U/PfmvWgxJhI9g==}
     dependencies:
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
       '@types/json-schema': 7.0.11
     dev: true
 
@@ -3202,15 +3204,11 @@ packages:
   /@types/lodash.isequal/4.5.6:
     resolution: {integrity: sha512-Ww4UGSe3DmtvLLJm2F16hDwEQSv7U0Rr8SujLUA2wHI2D2dm8kPu6Et+/y303LfjTIwSBKXB/YTUcAKpem/XEg==}
     dependencies:
-      '@types/lodash': 4.14.184
+      '@types/lodash': 4.14.117
     dev: false
 
   /@types/lodash/4.14.117:
     resolution: {integrity: sha512-xyf2m6tRbz8qQKcxYZa7PA4SllYcay+eh25DN3jmNYY6gSTL7Htc/bttVdkqj2wfJGbeWlQiX8pIyJpKU+tubw==}
-
-  /@types/lodash/4.14.184:
-    resolution: {integrity: sha512-RoZphVtHbxPZizt4IcILciSWiC6dcn+eZ8oX9IWEYfDMcocdd42f7NPI6fQj+6zI8y4E0L7gu2pcZKLGTRaV9Q==}
-    dev: false
 
   /@types/lru-cache/5.1.1:
     resolution: {integrity: sha512-ssE3Vlrys7sdIzs5LOxCzTVMsU7i9oa/IaW92wF32JFb3CVczqOkru2xspuKczHEbG3nvmPY7IFqVmGGHdNbYw==}
@@ -14586,6 +14584,21 @@ packages:
       schema-utils: 3.1.1
       source-map: 0.6.1
       webpack: 4.44.2_webpack-cli@4.6.0
+      whatwg-mimetype: 2.3.0
+    dev: true
+
+  /source-map-loader/1.1.3_webpack@5.74.0:
+    resolution: {integrity: sha512-6YHeF+XzDOrT/ycFJNI53cgEsp/tHTMl37hi7uVyqFAlTXW109JazaQCkbc+jjoL2637qkH1amLi+JzrIpt5lA==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      webpack: ^4.0.0 || ^5.0.0
+    dependencies:
+      abab: 2.0.6
+      iconv-lite: 0.6.3
+      loader-utils: 2.0.0
+      schema-utils: 3.1.1
+      source-map: 0.6.1
+      webpack: 5.74.0_webpack-cli@4.6.0
       whatwg-mimetype: 2.3.0
     dev: true
 

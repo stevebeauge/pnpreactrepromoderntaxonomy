@@ -10,13 +10,13 @@
     "serve": "gulp bundle --custom-serve --max_old_space_size=4096 && fast-serve"
   },
   "dependencies": {
-    "@microsoft/sp-component-base": "^1.15.2",
+    "@microsoft/sp-component-base": "1.15.2",
     "@microsoft/sp-core-library": "1.15.2",
     "@microsoft/sp-lodash-subset": "1.15.2",
     "@microsoft/sp-office-ui-fabric-core": "1.15.2",
     "@microsoft/sp-property-pane": "1.15.2",
     "@microsoft/sp-webpart-base": "1.15.2",
-    "@pnp/spfx-controls-react": "^3.10.0",
+    "@pnp/spfx-controls-react": "3.10.0",
     "office-ui-fabric-react": "7.185.7",
     "react": "16.13.1",
     "react-dom": "16.13.1",
@@ -35,6 +35,7 @@
     "ajv": "^6.12.6",
     "eslint-plugin-react-hooks": "4.3.0",
     "gulp": "4.0.2",
+    "source-map-loader": "1.1.3",
     "spfx-fast-serve-helpers": "~1.15.3",
     "typescript": "4.5.5"
   }
