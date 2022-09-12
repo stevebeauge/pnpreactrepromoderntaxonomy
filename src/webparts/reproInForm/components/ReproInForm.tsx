@@ -13,7 +13,8 @@ type ReproInFormProps = {
 
 type TermId = {
   label: string,
-  id: string
+  id: string,
+  languageTag: string
 }
 
 type FormValues = {
@@ -44,7 +45,7 @@ const getAllTermSets = async (context: BaseComponentContext): Promise<TermSet[]>
         groupId: current.g.id,
         groupName: current.g.name,
         id: ts.id,
-        name: ts.description
+        name: ts.localizedNames[0].name
       });
     });
     return acc;
@@ -56,7 +57,7 @@ const ReproInForm = ({ context }: ReproInFormProps): JSX.Element => {
 
   const defaultValues: FormValues = {
     termSetId: null,
-    someTaxoVal: []
+    someTaxoVal: [    ]
   };
 
   const { handleSubmit, control, getValues, resetField } = useForm({ defaultValues });
@@ -114,18 +115,24 @@ const ReproInForm = ({ context }: ReproInFormProps): JSX.Element => {
                   allowMultipleSelections
                   onChange={(selection) => {
                     // Actual output of onChange is not serializable, so wrap it in minimal required value
-                    const newVal = selection.map<TermId>(term => ({ id: term.id, label: term.labels[0].name }));
+                    const newVal = selection.map<TermId>(term => ({ id: term.id, label: term.labels[0].name, languageTag: term.labels[0].languageTag }));
+                    // Check if term ids have actually changed by comparing IDs
                     const selectedKeys = value.map(s => s.id);
                     const newKeys = selection.map(s => s.id);
                     const isSame = (
                       selectedKeys.length === newKeys.length &&
                       selectedKeys.every(id => newKeys.indexOf(id) !== -1)
                     );
-                    // Check if term ids have actually changed
                     if (!isSame) {
                       onChange(newVal);
                     }
                   }}
+                  initialValues={
+                    value.map(v => ({
+                      id: v.id,
+                      labels: [{ name: v.label, isDefault: true, languageTag: v.languageTag }]
+                    }))
+                  }
                   context={context}
                 />) : (
                 <Shimmer />
