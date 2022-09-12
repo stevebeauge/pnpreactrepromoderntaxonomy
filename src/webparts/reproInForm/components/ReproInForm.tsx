@@ -3,6 +3,7 @@ import { spfi, SPFx } from "@pnp/sp";
 import "@pnp/sp/taxonomy";
 import { ModernTaxonomyPicker } from '@pnp/spfx-controls-react';
 import { Dropdown, PrimaryButton, Shimmer } from 'office-ui-fabric-react';
+
 import * as React from 'react';
 import { Controller, useForm } from "react-hook-form";
 
@@ -26,6 +27,7 @@ type TermSet = {
   groupId: string,
   groupName: string
 }
+
 
 const getAllTermSets = async (context: BaseComponentContext): Promise<TermSet[]> => {
   const sp = spfi().using(SPFx(context));
@@ -73,7 +75,7 @@ const ReproInForm = ({ context }: ReproInFormProps): JSX.Element => {
         <Controller
           name="termSetId"
           control={control}
-          render={({ field: { onBlur, onChange, value, name,  } }) => {
+          render={({ field: { onBlur, onChange, value } }) => {
 
             return (
               knownTermSets ?
@@ -101,7 +103,7 @@ const ReproInForm = ({ context }: ReproInFormProps): JSX.Element => {
         <Controller
           name="someTaxoVal"
           control={control}
-          render={({ field: { onBlur, onChange, value, name, }, formState, fieldState }) => {
+          render={({ field: { onChange, value, } }) => {
             const termSetId = getValues('termSetId');
             return (
               termSetId ? (
@@ -109,9 +111,21 @@ const ReproInForm = ({ context }: ReproInFormProps): JSX.Element => {
                   termSetId={termSetId}
                   panelTitle={'Choose a term'}
                   label={''}
-                  onChange={(newVal) => onChange( // Actual output of onChange is not serializable, so wrap it in minimal required value
-                    newVal.map<TermId>(term => ({ id: term.id, label: term.labels[0].name }))
-                  )}
+                  allowMultipleSelections
+                  onChange={(selection) => {
+                    // Actual output of onChange is not serializable, so wrap it in minimal required value
+                    const newVal = selection.map<TermId>(term => ({ id: term.id, label: term.labels[0].name }));
+                    const selectedKeys = value.map(s => s.id);
+                    const newKeys = selection.map(s => s.id);
+                    const isSame = (
+                      selectedKeys.length === newKeys.length &&
+                      selectedKeys.every(id => newKeys.indexOf(id) !== -1)
+                    );
+                    // Check if term ids have actually changed
+                    if (!isSame) {
+                      onChange(newVal);
+                    }
+                  }}
                   context={context}
                 />) : (
                 <Shimmer />

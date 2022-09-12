@@ -19,6 +19,7 @@
     "@pnp/sp": "^3.7.0",
     "@pnp/spfx-controls-react": "3.10.0",
     "office-ui-fabric-react": "7.185.7",
+    "radash": "^7.1.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-hook-form": "^7.34.2",
