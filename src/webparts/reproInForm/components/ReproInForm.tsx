@@ -16,7 +16,7 @@ type TermId = {
 }
 
 type FormValues = {
-  someText: string;
+  termSetId: string;
   someTaxoVal: TermId[];
 }
 
@@ -53,11 +53,11 @@ const ReproInForm = ({ context }: ReproInFormProps): JSX.Element => {
 
 
   const defaultValues: FormValues = {
-    someText: null,
+    termSetId: null,
     someTaxoVal: []
   };
 
-  const { handleSubmit, control, getValues } = useForm({ defaultValues });
+  const { handleSubmit, control, getValues, resetField } = useForm({ defaultValues });
 
   const [data, setData] = React.useState<FormValues | undefined>();
   const [knownTermSets, setKnownTermSets] = React.useState<TermSet[] | undefined>(undefined);
@@ -71,16 +71,19 @@ const ReproInForm = ({ context }: ReproInFormProps): JSX.Element => {
     <>
       <form onSubmit={handleSubmit((data) => setData(data))}>
         <Controller
-          name="someText"
+          name="termSetId"
           control={control}
-          render={({ field: { onBlur, onChange, value, name } }) => {
+          render={({ field: { onBlur, onChange, value, name,  } }) => {
 
             return (
               knownTermSets ?
                 (
                   <Dropdown
                     defaultValue={value}
-                    onChange={(evt, option) => onChange(option?.key)}
+                    onChange={(evt, option) => {
+                      onChange(option?.key);
+                      resetField("someTaxoVal");
+                    }}
                     options={knownTermSets.map(ts => ({
                       key: ts.id,
                       text: `[${ts.groupName}] ${ts.name}`
@@ -99,7 +102,7 @@ const ReproInForm = ({ context }: ReproInFormProps): JSX.Element => {
           name="someTaxoVal"
           control={control}
           render={({ field: { onBlur, onChange, value, name, }, formState, fieldState }) => {
-            const termSetId = getValues('someText');
+            const termSetId = getValues('termSetId');
             return (
               termSetId ? (
                 <ModernTaxonomyPicker
